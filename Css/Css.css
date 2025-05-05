@@ -1,0 +1,251 @@
+:root {
+    --roxo: #8A2BE2;
+    --rosa: #FF6B9E;
+    --branco: #FFFFFF;
+    --cinza-claro: #F5F5F5;
+    --cinza-escuro: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--cinza-claro);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* LOGO CIRCULAR COM EFEITOS */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--roxo);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(5deg);
+    border-color: var(--rosa);
+    box-shadow: 0 6px 20px rgba(255, 107, 158, 0.3);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.logo {
+    animation: pulse 4s infinite;
+}
+
+.logo:active {
+    transform: scale(0.98);
+}
+
+/* CABEÇALHO */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.3rem;
+    color: var(--roxo);
+    margin-bottom: 5px;
+}
+
+h1 span {
+    color: var(--rosa);
+}
+
+.slogan {
+    color: var(--roxo);
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* CARDS */
+.card {
+    background: var(--branco);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: var(--roxo);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* FORMULÁRIO */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--roxo);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--roxo);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+}
+
+/* BOTÕES */
+.btn {
+    background: var(--roxo);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background: var(--rosa);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* LISTA DE AGENDAMENTOS */
+#lista-agendamentos {
+    display: grid;
+    gap: 12px;
+}
+
+.agendamento-item {
+    background: var(--cinza-claro);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--rosa);
+    transition: all 0.3s;
+}
+
+.agendamento-item:hover {
+    background: #E8D5F5;
+}
+
+.agendamento-info p:first-child {
+    font-weight: 600;
+    color: var(--roxo);
+}
+
+.agendamento-info p:last-child {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-cancelar {
+    background: var(--rosa);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-cancelar:hover {
+    background: #E91E63;
+}
+
+.vazio {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .agendamento-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .btn-cancelar {
+        align-self: flex-end;
+    }
+}
